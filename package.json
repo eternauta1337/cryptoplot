@@ -1,0 +1,22 @@
+{
+  "name": "cryptoplot",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "d3": "^4.9.1",
+    "d3-selection": "^1.1.0",
+    "d3fc-random-data": "^1.1.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "techan": "^0.8.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
