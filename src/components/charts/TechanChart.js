@@ -17,9 +17,19 @@ class TechanChart extends React.Component {
     this.renderChart(data);
   }
 
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return false;
+  // }
+
   renderChart(data) {
 
     const chart = ReactDOM.findDOMNode(this.refs.chart);
+
+    if (this.data && this.data === data) {
+      console.log('TechanChart - renderChart() skipped, same data.');
+      return;
+    }
+    this.data = data;
 
     d3.selectAll("svg > *").remove();
     d3.selectAll("svg").remove();

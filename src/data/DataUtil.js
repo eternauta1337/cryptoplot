@@ -62,7 +62,7 @@ export function getPriceData(coin, exchange, span, count, callback, simulate = f
         }
       });
 
-      // console.log('  processedData: ', processedData);
+      console.log('  processedData: ', processedData);
       callback(processedData);
     });
 }
