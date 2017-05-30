@@ -67,6 +67,11 @@ class App extends Component {
   }
 
   handleUpdatePrices() {
+
+    this.setState({
+      priceData: []
+    });
+
     DataUtil.getPriceData(
       this.state.selectedCoin,
       this.state.selectedExchange,
