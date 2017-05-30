@@ -1,7 +1,6 @@
 --- 
-env: 
-  CI: false
-  global: 
+env:
+  global:
     - 
       ENCRYPTION_LABEL: 9ca542a013e4
 language: node_js

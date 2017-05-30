@@ -2,6 +2,7 @@
   "name": "cryptoplot",
   "version": "0.1.0",
   "private": true,
+  "homepage:": "https://ajsantander.github.io/cryptoplot",
   "dependencies": {
     "d3": "^4.9.1",
     "d3-selection": "^1.1.0",
