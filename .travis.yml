@@ -4,6 +4,6 @@ node_js:
 script:
   - bash scripts/deploy.sh
 env:
-  - CI=false
+  - CI: false
   global:
   - ENCRYPTION_LABEL: 9ca542a013e4
