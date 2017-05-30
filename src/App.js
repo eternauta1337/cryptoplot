@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import * as DataUtil from './data/DataUtil';
 import TechanChart from './components/charts/TechanChart';
 import ParamsConfig from './components/ParamsConfig';
+import Info from './components/Info';
 
 class App extends Component {
 
@@ -114,6 +115,7 @@ class App extends Component {
           handleExchangeSelected={this.handleExchangeSelected}
           handleUpdatePrices={this.handleUpdatePrices}
         />
+        <Info/>
         <TechanChart data={this.state.priceData}/>
       </div>
     );
