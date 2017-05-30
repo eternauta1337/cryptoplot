@@ -1,5 +1,6 @@
 --- 
 env:
+  PUBLIC_URL: "https://ajsantander.github.io/cryptoplot/"
   global:
     - 
       ENCRYPTION_LABEL: 9ca542a013e4
