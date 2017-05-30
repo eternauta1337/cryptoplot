@@ -21,7 +21,8 @@ class TechanChart extends React.Component {
 
     const chart = ReactDOM.findDOMNode(this.refs.chart);
 
-    d3.select("svg").remove();
+    d3.selectAll("svg > *").remove();
+    d3.selectAll("svg").remove();
 
     if (!data || data.length === 0) {
       console.log('TechanChart - renderChart() skipped, no data.');
@@ -29,7 +30,7 @@ class TechanChart extends React.Component {
     }
     console.log('TechanChart - renderChart()');
 
-    const margin = {top: 20, right: 20, bottom: 30, left: 50},
+    const margin = {top: 40, right: 20, bottom: 30, left: 50},
       width = 960 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
 

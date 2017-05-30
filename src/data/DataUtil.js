@@ -11,10 +11,12 @@ import axios from 'axios';
 // GET PRICE HISTORICAL DATA
 // ---------------------------------------
 
-export function getPriceData(coin, exchange, span, callback, simulate = false) {
+export function getPriceData(coin, exchange, span, count, callback, simulate = false) {
   console.log('DataUtil - getPriceData()');
   console.log('  coin: ' + coin);
   console.log('  exchange: ' + exchange);
+  console.log('  span: ' + span);
+  console.log('  count: ' + count);
 
   // Simulate data?
   if(simulate) {
@@ -27,11 +29,11 @@ export function getPriceData(coin, exchange, span, callback, simulate = false) {
   const urlRequest = 'https://min-api.cryptocompare.com/data/histo' + span + encodeUrlParams({
     fsym: coin,
     tsym: 'USD',
-    limit: 1000,
+    limit: count !== 'all' ? count : 2000,
     aggregate: 1,
     e: exchange,
-    toTs: getUnixTimeStamp_daysAgo(0),
-    allData: false
+    // toTs: getUnixTimeStamp_daysAgo(0),
+    allData: count === 'all'
   });
   console.log('  url request: ' + urlRequest);
 
@@ -63,6 +65,21 @@ export function getPriceData(coin, exchange, span, callback, simulate = false) {
       // console.log('  processedData: ', processedData);
       callback(processedData);
     });
+}
+
+// ---------------------------------------
+// GET LIST OF COUNT OPTIONS
+// ---------------------------------------
+
+export function getCounts(callback) {
+  // TODO
+  callback([
+    "100",
+    "500",
+    "1000",
+    "2000",
+    "all"
+  ]);
 }
 
 // ---------------------------------------
