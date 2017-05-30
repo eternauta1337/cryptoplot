@@ -27,8 +27,8 @@ class TechanChart extends React.Component {
 
     const chart = ReactDOM.findDOMNode(this.refs.chart);
 
-    const margin = {top: 10, right: 20, bottom: 160, left: 40},
-      margin2 = {top: 370, right: 20, bottom: 80, left: 40},
+    const margin = {top: 20, right: 20, bottom: 160, left: 40},
+      margin2 = {top: 380, right: 20, bottom: 80, left: 40},
       width = 800 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom,
       height2 = 500 - margin2.top - margin2.bottom;

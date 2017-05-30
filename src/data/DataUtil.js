@@ -39,7 +39,7 @@ export function getPriceData(coin, exchange, span, callback, simulate = false) {
     .then(response => {
       response.json()
         .then(json => {
-          // console.log('  json: ', json);
+          console.log('  json: ', json);
 
           // PARSE
           const data = json.Data;
@@ -52,7 +52,7 @@ export function getPriceData(coin, exchange, span, callback, simulate = false) {
             d.volume = ((+d.volumefrom) + (+d.volumeto)) / 2;
           });
 
-          // console.log('  data: ', data);
+          console.log('  data: ', data);
           callback(data);
         });
     });

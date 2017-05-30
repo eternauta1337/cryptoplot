@@ -8,23 +8,26 @@ class ParamsConfig extends React.Component {
       <div>
 
         {/* COIN */}
-        <select name="coinsCombo" onChange={(event) => this.props.handleCoinSelected(event.target.value)}> {
+        <select name="coinsCombo" onChange={(event) => this.props.handleCoinSelected(event.target.value)}
+                defaultValue={selectedCoin}> {
           coins.map((coin, index) => {
-            return <option value={coin} key={index} selected={selectedCoin === coin}>{coin}</option>
+            return <option value={coin} key={index}>{coin}</option>
           })
         } </select>
 
         {/* EXCHANGE */}
-        <select name="exchangesCombo" onChange={(event) => this.props.handleExchangeSelected(event.target.value)}> {
+        <select name="exchangesCombo" onChange={(event) => this.props.handleExchangeSelected(event.target.value)}
+                defaultValue={selectedExchange}> {
           exchanges.map((exchange, index) => {
-            return <option value={exchange} key={index} selected={selectedExchange === exchange}>{exchange}</option>
+            return <option value={exchange} key={index}>{exchange}</option>
           })
         } </select>
 
         {/* TIME SPAN */}
-        <select name="spanCombo" onChange={(event) => this.props.handleSpanSelected(event.target.value)}> {
+        <select name="spanCombo" onChange={(event) => this.props.handleSpanSelected(event.target.value)}
+                defaultValue={selectedSpan}> {
           spans.map((span, index) => {
-            return <option value={span} key={index} selected={selectedSpan === span}>{span}</option>
+            return <option value={span} key={index}>{span}</option>
           })
         } </select>
 

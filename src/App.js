@@ -14,7 +14,7 @@ class App extends Component {
       coinData: [],
       spanData: [],
       selectedCoin: 'BTC',
-      selectedSpan: 'daily',
+      selectedSpan: 'day',
       selectedExchange: 'Bitstamp'
     };
 
