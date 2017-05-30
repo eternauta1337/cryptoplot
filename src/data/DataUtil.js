@@ -1,4 +1,5 @@
 import * as d3fc from 'd3fc-random-data';
+import axios from 'axios';
 
 /*
 * Interacts with the CRYPTOCOMPARE data api.
@@ -35,26 +36,32 @@ export function getPriceData(coin, exchange, span, callback, simulate = false) {
   console.log('  url request: ' + urlRequest);
 
   // FETCH ->
-  fetch(urlRequest, {method: 'GET'})
+  axios.get(urlRequest)
     .then(response => {
-      response.json()
-        .then(json => {
-          // console.log('  json: ', json);
+      // console.log('  response: ', response);
 
-          // PARSE
-          const data = json.Data;
-          data.forEach(d => {
-            d.date = new Date(+d.time * 1000);
-            d.open = +d.open;
-            d.high = +d.high;
-            d.low = +d.low;
-            d.close = +d.close;
-            d.volume = ((+d.volumefrom) + (+d.volumeto)) / 2;
-          });
+      // PARSE
+      const data = response.data.Data;
+      const processedData = [];
+      data.forEach(d => {
+        d.date = new Date(+d.time * 1000);
+        d.open = +d.open;
+        d.high = +d.high;
+        d.low = +d.low;
+        d.close = +d.close;
+        d.volume = ((+d.volumefrom) + (+d.volumeto)) / 2;
+        // console.log('  item: ', d);
+        if(d.open   !== 0 &&
+           d.high   !== 0 &&
+           d.low    !== 0 &&
+           d.close  !== 0 &&
+           d.volume !== 0) {
+          processedData.push(d);
+        }
+      });
 
-          // console.log('  data: ', data);
-          callback(data);
-        });
+      // console.log('  processedData: ', processedData);
+      callback(processedData);
     });
 }
 
