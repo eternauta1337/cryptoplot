@@ -32,7 +32,7 @@ export function getPriceData(coin, exchange, span, count, callback, simulate = f
     limit: count !== 'all' ? count : 2000,
     aggregate: 1,
     e: exchange,
-    // toTs: getUnixTimeStamp_daysAgo(0),
+    toTs: getUnixTimeStamp_daysAgo(0),
     allData: count === 'all'
   });
   console.log('  url request: ' + urlRequest);
