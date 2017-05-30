@@ -21,7 +21,7 @@ class TechanChart extends React.Component {
 
     const chart = ReactDOM.findDOMNode(this.refs.chart);
 
-    d3.select("chart-container").remove();
+    d3.select("svg").remove();
 
     if (!data || data.length === 0) {
       console.log('TechanChart - renderChart() skipped, no data.');
@@ -53,7 +53,6 @@ class TechanChart extends React.Component {
     const yAxis = d3.axisLeft(y);
 
     const svg = d3.select(chart)
-      .append("chart-container")
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)

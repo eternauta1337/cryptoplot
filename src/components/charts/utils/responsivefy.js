@@ -7,6 +7,7 @@ export default function(svg) {
   const width = parseInt(svg.style("width"), 10);
   const height = parseInt(svg.style("height"), 10);
   const aspect = width / height;
+  // console.log('responsivefy() ', container, width, height, aspect);
 
   // add viewBox and preserveAspectRatio properties,
   // and call resize so that svg resizes on inital page load
@@ -23,7 +24,10 @@ export default function(svg) {
   // get width of container and resize svg to fit it
   function resize() {
     const targetWidth = parseInt(container.style("width"), 10);
-    svg.attr("width", targetWidth);
-    svg.attr("height", Math.round(targetWidth / aspect));
+    // console.log('responsivefy() - resize ', targetWidth);
+    if(!isNaN(targetWidth)) {
+      svg.attr("width", targetWidth);
+      svg.attr("height", Math.round(targetWidth / aspect));
+    }
   }
 }
