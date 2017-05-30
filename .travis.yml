@@ -1,9 +1,11 @@
+--- 
+env: 
+  CI: false
+  global: 
+    - 
+      ENCRYPTION_LABEL: 9ca542a013e4
 language: node_js
-node_js:
+node_js: 
   - stable
-script:
-  - bash scripts/deploy.sh
-env:
-  - CI: false
-  global:
-  - ENCRYPTION_LABEL: 9ca542a013e4
+script: 
+  - "bash scripts/deploy.sh"
